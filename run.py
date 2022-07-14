@@ -122,48 +122,48 @@ def test_one(args, test_dataloader, dev_dataloader):
 
 if __name__ == '__main__': 
     #local test
-    class struct:
-      def __init__(self):
-        self.device="cuda"
-        self.train=True
-        self.test=True
-        self.epoch=10
-        self.batch_size=8
-        self.pretrained_model="roberta-base"
-        self.dropout=0.0
-        self.lr=1e-5
-        self.text_size=256
-        self.pic_size=256
-        self.checkpoints_dir="./output/"
-        self.train_kind="mbert"
-        self.test_output_file="./output/{}-result.txt".format(self.train_kind)
+    # class struct:
+    #   def __init__(self):
+    #     self.device="cuda"
+    #     self.train=True
+    #     self.test=True
+    #     self.epoch=10
+    #     self.batch_size=8
+    #     self.pretrained_model="roberta-base"
+    #     self.dropout=0.0
+    #     self.lr=1e-5
+    #     self.text_size=256
+    #     self.pic_size=256
+    #     self.checkpoints_dir="./output/"
+    #     self.train_kind="mbert"
+    #     self.test_output_file="./output/{}-result.txt".format(self.train_kind)
 
-    arguments=struct()
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument('-train_kind', '--train_kind',
-    #                     type=str, default='mbert', help='model kind for train ')
-    # parser.add_argument('-pretrained_model', '--pretrained_model',
-    #                     type=str, default='roberta-base', help='pretrained_model')
-    # parser.add_argument('--train', action='True', help='start training.')
-    # parser.add_argument('--test', action='True', help='start testing.')
-    # parser.add_argument("-lr", "--lr",
-    #                     type=float, default=1e-5, help='learning rate')
-    # parser.add_argument("-dropout", "--dropout",
-    #                     type=float, default=0.0, help='dropout')
-    # parser.add_argument("-epoch", "--epoch",
-    #                     type=int, default=10, help='epoch')
-    # parser.add_argument("-batch_size", "--batch_size",
-    #                     type=int, default=5, help='batch size')
-    # parser.add_argument('-checkpoints_dir', '--checkpoints_dir',
-    #                     type=str, default='./checkpoint', help='checkpoint dir')
-    # parser.add_argument('-test_output_file', '--test_output_file',
-    #                     type=str, default='./test_with_label.txt', help='test output file')
-    # parser.add_argument("--pic_size", "--pic_size",
-    #                     type=int, default=256, help='pic size')
-    # parser.add_argument("--text_size", "--text_size",
-    #                     type=int, default=256, help='text size')
+    # arguments=struct()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-train_kind', '--train_kind',
+                        type=str, default='mbert', help='model kind for train ')
+    parser.add_argument('-pretrained_model', '--pretrained_model',
+                        type=str, default='roberta-base', help='pretrained_model')
+    parser.add_argument('--train', action='True', help='start training.')
+    parser.add_argument('--test', action='True', help='start testing.')
+    parser.add_argument("-lr", "--lr",
+                        type=float, default=1e-5, help='learning rate')
+    parser.add_argument("-dropout", "--dropout",
+                        type=float, default=0.0, help='dropout')
+    parser.add_argument("-epoch", "--epoch",
+                        type=int, default=10, help='epoch')
+    parser.add_argument("-batch_size", "--batch_size",
+                        type=int, default=5, help='batch size')
+    parser.add_argument('-checkpoints_dir', '--checkpoints_dir',
+                        type=str, default='./checkpoint', help='checkpoint dir')
+    parser.add_argument('-test_output_file', '--test_output_file',
+                        type=str, default='./test_with_label.txt', help='test output file')
+    parser.add_argument("--pic_size", "--pic_size",
+                        type=int, default=256, help='pic size')
+    parser.add_argument("--text_size", "--text_size",
+                        type=int, default=256, help='text size')
 
-    # arguments = parser.parse_args()
+    arguments = parser.parse_args()
 
 
     # cuda
